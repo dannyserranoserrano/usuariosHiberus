@@ -11,13 +11,13 @@ function LogOut() {
 
     return (
         <div className='logout'>
-            <div className="container bodyLogout">
-                <div className='centerLogout'>
-                    <div className="logoutTitle text-center"><p>Sesión Cerrada Correctamente</p></div>
-                </div>
+            <div className=" bodyLogout">
+                <header className='centerLogout'>
+                    <div className=" text-center"><p>Sessión Cerrada Correctamente</p></div>
+                </header>
                 {/* *****Buttons***** */}
-                <div className="container buttonsLogout">
-                    <div className=' row justify-content-between'>
+                <div className="container group-button">
+                    <div>
                         <div className="col-auto">
                             <Link className="btn btn-primary" type="button" to="/">Volver</Link>
                         </div>

@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    padding: 40px;
+    text-align: center;
+    text-shadow: 15px 5px 8px #b9ed88;
+    font: bold 60px "absoluteZero",
+        sans-serif;
+    color: white;
+}
+
+.group-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+@font-face {
+    /*Aqui referenciamos las fuentes que queramos añadir al sistema*/
+    font-family: "absoluteZero";
+    src: url(./proyecto-front/src/fonts/Absolute\ Zero\ Italic.otf);
+}
