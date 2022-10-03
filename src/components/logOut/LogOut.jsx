@@ -1,32 +1,34 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 function LogOut() {
 
+    const navigate = useNavigate();
+
     let option = window.confirm("Estas seguro de querer Salir?")
+
     if (option) {
-        localStorage.removeItem("accessToken")
-        localStorage.removeItem("email")
+        localStorage.removeItem(["accessToken"]);
+        localStorage.removeItem(["email"]);
+
+        setTimeout(() => {
+            navigate('/')
+        }, 3000)
+    } else {
+        setTimeout(() => {
+            navigate('/')
+        }, 3000)
     }
 
     return (
-        <div className='logout'>
-            <div className=" bodyLogout">
-                <header className='centerLogout'>
-                    <div className=" text-center"><p>Sessión Cerrada Correctamente</p></div>
-                </header>
-                {/* *****Buttons***** */}
-                <div className="container group-button">
-                    <div>
-                        <div className="col-auto">
-                            <Link className="btn btn-primary" type="button" to="/">Volver</Link>
-                        </div>
-                        <div className="col-auto">
-                            <Link className="btn btn-success" type="button" to="/login">Login</Link>
-                        </div>
-                    </div>
+        <div className='page'>
+            <header className='title'>
+                <div className="title"><p>Session Cerrada Correctamente</p></div>
+            </header>
+            <section className="section">
+                <div className='subSection'>
                 </div>
-            </div>
+            </section>
+
         </div>
     )
 }

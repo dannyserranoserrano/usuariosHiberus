@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.css'
-import LogoHeroes from '../../assets/Logo Heroes y Heroinas.png'
-import { useState } from 'react';
 
 function Home() {
 
@@ -11,45 +9,38 @@ function Home() {
     let token = localStorage.getItem('accessToken')
     let user = localStorage.getItem('email')
 
-    console.log(token)
-
-
+    // console.log(token)
 
     return (
-        <div id='home'>
+        <div className='page'>
             <header className='title'>
                 <p>Prueba practica de Front</p>
             </header>
 
             <section className='section'>
-                <aside className='aside'>
-                    <div className="texto">
-                        <div style={{ display: user != null ? "block" : "none" }}>
-                            <h6>Tu usuario: <br /> {user}</h6>
+                <div className='subSection'>
+                    <aside className='aside'>
+                        <div className="text">
+                            <div style={{ display: user != null ? "block" : "none" }}>
+                                <p><strong> Tu usuario: </strong><br /> {user}</p>
+                            </div>
+                            <div style={{ display: user == null ? "block" : "none" }}>
+                                <p><strong> No estas logueado</strong></p>
+                            </div>
                         </div>
-                        <div style={{ display: user == null ? "block" : "none" }}>
-                            <h6>No estas logueado</h6>
-                        </div>
+                    </aside>
+                </div>
+                <div className='subSection'>
+                    <div className='btn-group group-button' id='logIn' style={{ display: token == null ? "flex" : "none" }}>
+                        <Link className="btn btn-outline-warning btnCenter" type='button' to="/logIn">LogIn</Link>
+                        <Link className="btn btn-outline-success btnCenter" type='button' to="/signUp">Register</Link>
                     </div>
-                    <div className='group-button'>
-                        <div id='logIn' style={{ display: token == null ? "block" : "none" }}>
-                            <Link to="/logIn"><button className="btn btn-primary" type='button'>LogIn</button></Link>
-                        </div>
-                        <div id='signUp' style={{ display: token == null ? "block" : "none" }}>
-                            <Link className="btn btn-primary" type='button' to="/signUp">Register</Link>
 
-                        </div>
+                    <div className='btn-group group-button' id='userPage' style={{ display: token != null ? "flex" : "none" }}>
+                        <Link className="btn btn-outline-success btnCenter" type='button' to="/userPage">Usuarios</Link>
+                        <Link className="btn btn-outline-warning btnCenter" type='button' to="/logOut">Log Out</Link>
                     </div>
-
-                    <div className='group-button'>
-                        <div id='userPage' style={{ display: token != null ? "block" : "none" }}>
-                            <Link className="btn btn-primary" type='button' to="/userPage">Usuarios</Link>
-                        </div>
-                        <div id='logOut' style={{ display: token != null ? "block" : "none" }}>
-                            <Link className="btn btn-primary" type='button' to="/logOut">Log Out</Link>
-                        </div>
-                    </div>
-                </aside>
+                </div>
             </section>
         </div >
     )

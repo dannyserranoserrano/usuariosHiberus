@@ -46,59 +46,59 @@ const LogIn = () => {
     };
 
     return (
-        <div className='login'>
-            <div className="container">
-                <div className="loginTitle text-center mt-3"><p>LOGUEATE</p></div>
-                <form onSubmit={handleSubmit} className="col-auto">
-                    <div className='row justify-content-around'>
-                        <div className='container'>
-                            <div className="table table-responsive">
-                                <div className='container inputsRegister'>
-                                    <div className="loginEmail">
-                                        <label className="form-label">Email</label>
-                                        <div className="input-group">
-                                            <span className="input-group-text" id="inputGroupPrepend2">@</span>
-                                            <input type="email" name="email" className="form-control" id="validationDefaultUsername"
-                                                aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Introduce Tu Email" required />
-                                        </div>
-                                    </div>
-                                    <div className="loginPassword">
-                                        <label className="form-label">Password</label>
-                                        <div className="input-group">
-                                            <span className="input-group-text" id="inputGroupPrepend2">***</span>
-                                            <input type="password" name="password" className="form-control" id="validationDefaultPassword"
-                                                aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Escribe Un Password" required />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* *****AVISOS DE ERRORES***** */}
-                            <div className="message_ok shadow-lg m-3 p-3 bg-body rounded border" style={{ display: successMessage ? "block" : "none" }}>
-                                {successMessage}
-                            </div>
-                            <div className="message_nok shadow-lg m-3 p-3  bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
-                                {errorMessage}
-                            </div>
+        <div className='page'>
+            <header className="title">
+                <p>LOGUEATE</p>
+            </header>
 
-                            {/* *****Buttons***** */}
-                            <div className="container loginButtons">
-                                <div className=' row justify-content-between '>
-                                    <div className="col-auto">
-                                        <Link className="btn btn-primary" type="button" to="/">Volver</Link>
-                                    </div>
-                                    <div className="col-auto">
-                                        <button className="btn btn-success" type="submit" onChange={handleChange}
-                                            disabled={!userLogin.email.length || !userLogin.password.length}>Login</button>
+            <section className="section">
+                <div className="subSection">
+                    <article className="aside">
+                        <form onSubmit={handleSubmit} className="col-auto">
+                            <aside className="w-100">
+
+                                <div>
+                                    <label className="form-label">Email</label>
+                                    <div className="input-group">
+                                        <span className="input-group-text" id="inputGroupPrepend2">@</span>
+                                        <input type="email" name="email" className="form-control" id="validationDefaultUsername"
+                                            aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Introduce Tu Email" required />
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+
+                                <div>
+                                    <label className="form-label">Password</label>
+                                    <div className="input-group">
+                                        <span className="input-group-text" id="inputGroupPrepend2">***</span>
+                                        <input type="password" name="password" className="form-control" id="validationDefaultPassword"
+                                            aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Escribe Un Password" required />
+                                    </div>
+                                </div>
+                            </aside>
+                        </form>
+                    </article>
+                </div>
+
+                <aside className="subSection m-5">
+                    <div className="shadow-lg bg-body rounded border text-center" style={{ display: successMessage ? "block" : "none" }}>
+                        {successMessage}
                     </div>
+                    <div className="shadow-lg bg-body rounded border text-center" style={{ display: errorMessage ? "block" : "none" }}>
+                        {errorMessage}
+                    </div>
+                </aside>
 
-                </form>
-            </div>
+                <div className="subSection">
+                    <article className="group-button">
+                        <div className="btn-group ">
+                            <Link className="btn btn-outline-success" type="button" to="/">Volver</Link>
+                            <button className="btn btn-outline-warning" onClick={handleSubmit} type="submit" onChange={handleChange}
+                                disabled={!userLogin.email.length || !userLogin.password.length}>Login</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
     )
-
 };
 export default LogIn;

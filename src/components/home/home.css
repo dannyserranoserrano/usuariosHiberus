@@ -1,57 +1,8 @@
-#home {
-    background-color: rgb(31, 31, 9);
-    height: 100vh;
-}
-
-
-.title {
-    padding: 40px;
-    text-align: center;
-    text-shadow: 15px 5px 8px #b9ed88;
-    font: bold 60px "absoluteZero",
-        sans-serif;
-    color: white;
-}
-
-
-.section {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.texto {
-    text-align: center;
-}
-
-.aside {
-    align-items: center;
-    background-color: rgb(185, 237, 136);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    height: 20vh;
-    justify-content: center;
-    width: 20vw;
-}
-
-.group-button {
-    display: flex;
-    justify-content: space-between;
-}
-
 #signUp,
 #logIn,
 #userPage,
 #logOut {
+
     display: flex;
     margin: 10px;
-
-}
-
-@font-face {
-    /*Aqui referenciamos las fuentes que queramos añadir al sistema*/
-    font-family: "absoluteZero";
-    src: url(../../fonts/Absolute\ Zero\ Italic.otf);
 }

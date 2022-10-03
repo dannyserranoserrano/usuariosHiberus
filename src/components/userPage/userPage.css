@@ -1,25 +1,43 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+tabla {
+    border-radius: 20px;
 }
 
-.title {
-    padding: 40px;
-    text-align: center;
-    text-shadow: 15px 5px 8px #b9ed88;
-    font: bold 60px "absoluteZero",
-        sans-serif;
-    color: white;
+table th,
+table tr,
+table td {
+
+    border: 1px solid rgb(185, 237, 136);
 }
 
-.group-button {
-    display: flex;
-    justify-content: space-between;
-}
+@media (max-width: 600px) {
 
-@font-face {
-    /*Aqui referenciamos las fuentes que queramos añadir al sistema*/
-    font-family: "absoluteZero";
-    src: url(./proyecto-front/src/fonts/Absolute\ Zero\ Italic.otf);
+    table {
+        width: 100%;
+    }
+
+    table tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(185, 237, 136);
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table td,
+    table th {
+        border: none;
+    }
+
+    table td[data-titulo] {
+        display: flex;
+    }
+
+    table td[data-titulo]::before {
+        content: attr(data-titulo);
+        width: 70px;
+    }
 }
