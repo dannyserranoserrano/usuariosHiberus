@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Prueba Práctica de Front. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Realizado por Daniel Serrano Serrano.
+Framework utilizado: React.
+Implantación de estilos con Css y Bootstrap.
 
-## Available Scripts
+## Explicación de la aplicación.
+El trabajo se compone de una pantalla principal con titulo, botón de Login y Registro, así como una pequeña tarjeta con con el estado de tu Login, en el que si no estás logueado, te informa, y si estás logueado de dice con que cuenta lo estás.
 
-In the project directory, you can run:
+En la sección de Registro, muestra un formulario  básico en el que se pide Nombre, Apellido Email y Password, tanto si existe algún error como si la operación de registro es satisfactoria, sale un mensaje de información, bajo el cuadro del formulario. Tras el registro, serás redireccionado a la página principal, para realizar el logueo.
+Tanto en los botones de confirmar registro, Login, o modificación de los datos, estarán deshabilitados hasta que no completes los formularios.
+ 
+Una vez logueado, se muestra tu cuenta en la tarjeta de información, y ya podrás acceder a la tabla con todos los usuarios registrados.
+ Los botones de funciones van variando, activando unos y desactivando otros, según vas avanzando por las pantallas. Esto lo he realizado con hook useState y jugando con estilos de display de dichos  botones.
 
-### `npm start`
+En la lista de usuarios, muestro un encabezado con las informaciones Email, Nombre y Apellido. No se muestra el password ya que es una propiedad que no devuelve la Api utilizada. Tampoco muestro los Id, ya que me pareció una información irrelevante.
+Contamos con un botón Ver, el cual te abrirá un componente con una card mostrando la información del usuario, Nombre, Apellido, Email, y aquí si muestro el Id.
+Debajo, tendrás la opción de borrar o editar la información de dicho usuario, así como de volver a la pantalla principal.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Decisiones acerca del trabajo.
+En este trabajo he decidido no insertar ni Navbar, ni Footer, ya que pensé que era irrelevante, y la prueba no se trataba de ello. Así mismo, he decidido darle un aspecto minimalista, con  bordes redondeados y colores básicos. Insertando una fuente diferente a las contenidas en el sistema, jugando un poco con shadows para intentar crear algo de relieve, y algún efecto mínimo en los botones.
+También he tratado de seguir una linea de etiquetas siguiendo las reglas de maquetación semántica (en la medida que nos permite este proyecto tan básico), para no cargarlo de divs innecesariamente, además de intentar facilitar la legibilidad del código.
+He ido cargando los componentes en el componente Home, en lugar de cargar páginas completas, con el fin de minimizar el renderizado constante del proyecto.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dificultades y soluciones.
+He encontrado dificultad al renderizar en el componente usuario, ya que al cargarse con una Id personalizada, no he encontrado el método, por lo que decidí que fuese el único enrutado existente,
+El LogOut, lo he realizado sin pantalla a mostrar ya que no vi necesario mostrarlo una vez pulsado el botoń. Lo que si cuenta es con confirmación por parte del usuario, y re-direccionamiento a la página principal.
+También me surge un pequeño fallo no resuelto que es la doble confirmación unicamente en el borrado, y que no he encontrado el motivo.
+Me surgió al comienzo del proyecto la dificultad de encontrar como realizar la llamada a la Api integrándole el Token, pero tras varias pruebas con Postman, y  consultando en alguna página por medio Google, conseguí solución fácilmente. Una vez esto no encontré mayor dificultad, ya que las llamadas a Api’s, las utilizo con frecuencia.
 
-### `npm test`
+Mi dificultad la encontré en los estilos y en como realizar el proyecto para que no fuese excesivamente cargado o molesto, y pudiese mostrar claramente su finalidad. También en el modo de implantar los cambios en la pantalla de modo que solo cargase algunos componentes sueltos en lugar de realizar constantes enrutados completos ya que entiendo que la finalidad de un framework como este es el uso de componentes en una página, y no la apertura de constantes páginas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Para realizar el arranque, descargar la carpeta y en terminal dentro de la ubicación, ejecutar npm i.

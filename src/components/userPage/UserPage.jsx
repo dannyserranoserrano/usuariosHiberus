@@ -8,7 +8,6 @@ const UserPage = () => {
 
     const [users, setUsers] = useState([]);
     const accessToken = localStorage.getItem("accessToken")
-    const [successMessage, setSuccessMessage] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
 
     const config = {
@@ -34,14 +33,12 @@ const UserPage = () => {
     return (
         <div className='page' >
             <header className='title'>
-                <p>Lista de Usuarios</p>
-
+                <h3>Lista de Usuarios</h3>
             </header>
 
             <section>
-
-                <article className='subSection'>
-                    <table className='tabla w-75 table table-sm table-striped table-dark'>
+                <article className='tabla'>
+                    <table className=' w-100 table table-sm table-striped table-dark'>
                         <thead>
                             <tr>
                                 <th>Email</th>
@@ -59,30 +56,20 @@ const UserPage = () => {
                                     <td data-titulo="Usuario:">{e.email}</td>
                                     <td data-titulo="Nombre:">{e.name}</td>
                                     <td data-titulo="Apellido:">{e.surname}</td>
-                                    <td className='d-flex justify-content-center'><Link type="button" className="btn btn-outline-light" to={`/user/${e.id}`}>Ver</Link></td>
+                                    <td className='d-flex justify-content-center'><Link type="button" className="btn btn-outline-light btnStyle" to={`/user/${e.id}`}>Ver</Link></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 </article>
-                <div className='subSection'>
-                    <div className="shadow-lg bg-body rounded border text-center" style={{ display: successMessage ? "block" : "none" }}>
-                        <div>
-                            {successMessage}
-                        </div>
-                    </div>
-                    <div className="shadow-lg bg-body rounded border  text-center" style={{ display: errorMessage ? "block" : "none" }}>
+
+                <aside className='subSection'>
+                    <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
                         <div>
                             {errorMessage}
                         </div>
                     </div>
-                    <article className='group-button'>
-                        <div className='btn-group'>
-                            <Link className="btn btn-outline-success" type="button" to="/">Volver</Link>
-                            <Link className="btn btn-outline-warning" type='button' to="/LogOut">LogOut</Link>
-                        </div>
-                    </article>
-                </div>
+                </aside>
             </section>
         </div>
     )

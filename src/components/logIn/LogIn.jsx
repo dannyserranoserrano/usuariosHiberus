@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
-const LogIn = () => {
+export default function LogIn() {
     const [userLogin, setUserLogin] = useState({
         email: "",
         password: "",
@@ -11,7 +10,6 @@ const LogIn = () => {
 
     const [successMessage, setSuccessMessage] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setUserLogin({
@@ -34,13 +32,14 @@ const LogIn = () => {
             console.log(response)
             setSuccessMessage("Se ha Logueado correctamente")
             setTimeout(() => {
-                navigate('/userPage')
+                window.location.reload();
             }, 2000)
+
 
         } catch (error) {
             setErrorMessage("Se ha producido un error en la operación")
             setTimeout(() => {
-                window.location.href = "/logIn"
+                window.location.href = "/"
             }, 2000)
         }
     };
@@ -48,57 +47,53 @@ const LogIn = () => {
     return (
         <div className='page'>
             <header className="title">
-                <p>LOGUEATE</p>
+                <h3>LOGUEATE</h3>
             </header>
 
-            <section className="section">
-                <div className="subSection">
-                    <article className="aside">
-                        <form onSubmit={handleSubmit} className="col-auto">
-                            <aside className="w-100">
-
-                                <div>
-                                    <label className="form-label">Email</label>
-                                    <div className="input-group">
-                                        <span className="input-group-text" id="inputGroupPrepend2">@</span>
-                                        <input type="email" name="email" className="form-control" id="validationDefaultUsername"
-                                            aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Introduce Tu Email" required />
-                                    </div>
+            <div className="subSection">
+                <article className="aside">
+                    <form onSubmit={handleSubmit} className="col-auto">
+                        <aside className="w-100">
+                            <div>
+                                <label className="form-label">Email</label>
+                                <div className="input-group">
+                                    <span className="input-group-text" id="inputGroupPrepend2">@</span>
+                                    <input type="email" name="email" className="form-control" id="validationDefaultUsername"
+                                        aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Introduce Tu Email" required />
                                 </div>
+                            </div>
 
-                                <div>
-                                    <label className="form-label">Password</label>
-                                    <div className="input-group">
-                                        <span className="input-group-text" id="inputGroupPrepend2">***</span>
-                                        <input type="password" name="password" className="form-control" id="validationDefaultPassword"
-                                            aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Escribe Un Password" required />
-                                    </div>
+                            <div>
+                                <label className="form-label">Password</label>
+                                <div className="input-group">
+                                    <span className="input-group-text" id="inputGroupPrepend2">***</span>
+                                    <input type="password" name="password" className="form-control" id="validationDefaultPassword"
+                                        aria-describedby="inputGroupPrepend2" onChange={handleChange} placeholder="Escribe Un Password" required />
                                 </div>
-                            </aside>
-                        </form>
-                    </article>
-                </div>
+                            </div>
+                        </aside>
+                    </form>
+                </article>
+            </div>
 
-                <aside className="subSection m-5">
-                    <div className="shadow-lg bg-body rounded border text-center" style={{ display: successMessage ? "block" : "none" }}>
-                        {successMessage}
-                    </div>
-                    <div className="shadow-lg bg-body rounded border text-center" style={{ display: errorMessage ? "block" : "none" }}>
-                        {errorMessage}
-                    </div>
-                </aside>
-
-                <div className="subSection">
-                    <article className="group-button">
-                        <div className="btn-group ">
-                            <Link className="btn btn-outline-success" type="button" to="/">Volver</Link>
-                            <button className="btn btn-outline-warning" onClick={handleSubmit} type="submit" onChange={handleChange}
-                                disabled={!userLogin.email.length || !userLogin.password.length}>Login</button>
-                        </div>
-                    </article>
+            <aside className="subSection m-5">
+                <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: successMessage ? "block" : "none" }}>
+                    {successMessage}
                 </div>
-            </section>
+                <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
+                    {errorMessage}
+                </div>
+            </aside>
+
+            <aside className="subSection">
+                <article className="group-button">
+                    <div className="btn-group ">
+                        <button className="btn btn-outline-light btnStyle" onClick={handleSubmit} type="submit" onChange={handleChange}
+                            disabled={!userLogin.email.length || !userLogin.password.length}>Login</button>
+                    </div>
+                </article>
+            </aside>
         </div>
     )
 };
-export default LogIn;
+

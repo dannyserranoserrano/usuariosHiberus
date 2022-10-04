@@ -16,9 +16,9 @@
   align-items: center;
   color: white;
   display: flex;
-  font: bold 4vw "absoluteZero",
+  font: bold 3vmax "absoluteZero",
     sans-serif;
-  height: 20vh;
+  height: 10vh;
   justify-content: center;
   text-align: center;
   text-shadow: 15px 5px 8px #b9ed88;
@@ -31,7 +31,7 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100vw;
-  min-height: 80vh;
+  min-height: 90vh;
 }
 
 .subSection {
@@ -40,6 +40,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 .aside {
@@ -59,7 +60,7 @@
 .text {
 
   display: flex;
-  font-size: 4vw;
+  font-size: 1vmax;
   justify-content: center;
   padding: 15px;
   position: relative;
@@ -71,6 +72,31 @@
   display: flex;
   justify-content: center;
   padding-bottom: 10px;
+}
+
+.btnStyle {
+
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 50px;
+  border: 3px solid #3c67e3;
+  border-radius: 10px;
+}
+
+.btnStyle:hover {
+
+  animation: pulsate 1s ease-in-out;
+
+}
+
+@keyframes pulsate {
+
+  0% {
+    box-shadow:
+      0 0 25px #5ddcff,
+      0 0 50px #4e00c2;
+  }
 }
 
 @font-face {

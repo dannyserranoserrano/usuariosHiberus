@@ -40,20 +40,17 @@ function User() {
 
         let option = window.confirm("Seguro de borrar al Usuario?")
         if (option) {
-
             const response = await axios.delete(`http://51.38.51.187:5050/api/v1/users/${id}`,
                 config)
             console.log(response);
 
             try {
                 setSuccessMessage('El Usuario ha sido eliminado')
-
                 setTimeout(() => {
-                    window.location.href = '/userPage'
+                    navigate('/')
                 }, 2000)
 
             } catch (error) {
-
                 setTimeout(() => {
                     window.location.href = `/user/${id}`
                 }, 2000)
@@ -93,17 +90,17 @@ function User() {
                     { ...upUser },
                     config)
 
-                setSuccessMessage(response.statusText)
+                setSuccessMessage("Se ha modificado correctamente")
                 console.log(response)
                 setTimeout(() => {
                     window.location.href = `/user/${id}`
                 }, 2000)
 
             } catch (error) {
-                setErrorMessage(error.message)
+                setErrorMessage("Se ha producido un error")
                 console.log(error.message)
                 setTimeout(() => {
-                    window.location.href = "/userPage"
+                    window.location.href = "/"
                 }, 2000)
             }
         }
@@ -113,7 +110,7 @@ function User() {
     return (
         <div className='page'>
             <header className='title'>
-                <p>Datos de {user.name}</p>
+                <h3>Datos de {user.name}</h3>
             </header>
 
             <section className='section'>
@@ -156,25 +153,27 @@ function User() {
                         </form >
                     </article>
                 </div>
-                <div className="subSection">
-                    <article>
-                        <div className="shadow-lg bg-body rounded border text-center" style={{ display: successMessage ? "block" : "none" }}>
-                            {successMessage}
-                        </div>
-                        <div className="shadow-lg bg-body rounded border  text-center" style={{ display: errorMessage ? "block" : "none" }}>
-                            {errorMessage}
-                        </div>
-                    </article>
+
+                <aside className="subSection">
+                    <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: successMessage ? "block" : "none" }}>
+                        {successMessage}
+                    </div>
+                    <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
+                        {errorMessage}
+                    </div>
+                </aside>
+
+                <div className='subSection'>
                     <article className='group-button'>
                         <div id='buttonMod' className="btn-group " style={{ display: 'none' }} >
-                            <button className="btn btn-outline-warning" type="submit" onClick={handleSubmit} disabled={!upUser.name.length || !upUser.surname.length || !upUser.email.length}
+                            <button className="btn btn-outline-light btnStyle" type="submit" onClick={handleSubmit} disabled={!upUser.name.length || !upUser.surname.length || !upUser.email.length}
                             >Modificar</button>
-                            <button className="btn btn-outline-success" onClick={close}>Cerrar</button>
+                            <button className="btn btn-outline-light btnStyle" onClick={close}>Cerrar</button>
                         </div>
                         <div id="modButton" className='btn-group'>
-                            <button className='btn btn-outline-danger' onClick={delUser}>Borrar</button>
-                            <button className='btn btn-outline-warning' onClick={modifyForm}>Editar</button>
-                            <Link className="btn btn-outline-success" type="button" to="/userPage">Volver</Link>
+                            <button className='btn btn-outline-light btnStyle' onClick={delUser}>Borrar</button>
+                            <button className='btn btn-outline-light btnStyle' onClick={modifyForm}>Editar</button>
+                            <Link className="btn btn-outline-light btnStyle" type="button" to="/">Volver</Link>
                         </div>
                     </article>
                 </div>
