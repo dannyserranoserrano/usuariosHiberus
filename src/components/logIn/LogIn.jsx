@@ -33,7 +33,7 @@ export default function LogIn() {
             setSuccessMessage("Se ha Logueado correctamente")
             setTimeout(() => {
                 window.location.reload();
-            }, 2000)
+            }, 1000)
 
 
         } catch (error) {

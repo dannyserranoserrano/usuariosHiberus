@@ -5,9 +5,24 @@
   padding: 0;
 }
 
-.page {
+.app {
+  border-radius: 20px;
+  background-image: radial-gradient(circle at 74.1% 21.28%, #ffdcca 0, #ffddc6 3.85%,
+      #ffdfc3 7.69%, #ffe1c0 11.54%, #ffe3be 15.38%, #ffe5bc 19.23%, #fae7bc 23.08%,
+      #f4e9bc 26.92%, #eeeabd 30.77%, #e7ecbf 34.62%, #e1eec1 38.46%, #daefc5 42.31%,
+      #d4f1c8 46.15%, #cdf2cd 50%, #c7f3d2 53.85%, #c1f4d7 57.69%, #bbf5dd 61.54%,
+      #b6f5e3 65.38%, #b2f5e9 69.23%, #aff5ef 73.08%, #adf5f5 76.92%, #acf5fb 80.77%,
+      #acf4ff 84.62%, #adf4ff 88.46%, #b0f3ff 92.31%, #b3f1ff 96.15%, #b8f0ff 100%);
+}
 
-  background-color: rgb(12, 12, 6);
+.page {
+  box-shadow: 16px -16px 6px #2e2e2e;
+  border-radius: 20px;
+  background-image: radial-gradient(circle at 71.43% 28.57%, #89595a 0,
+      #87525a 7.14%, #834b59 14.29%, #7f4359 21.43%, #783b59 28.57%,
+      #703259 35.71%, #662859 42.86%, #591f59 50%, #4a175a 57.14%,
+      #37135b 64.29%, #1e125d 71.43%, #00135f 78.57%, #001461 85.71%,
+      #001461 92.86%, #001361 100%);
   max-width: 100vw;
 }
 
@@ -21,21 +36,27 @@
   height: 10vh;
   justify-content: center;
   text-align: center;
-  text-shadow: 15px 5px 8px #b9ed88;
+  text-shadow: 10px -4px 5px #8d8a8a;
 }
 
 .section {
 
+  background-image: radial-gradient(circle at 71.43% 28.57%, #89595a 0,
+      #87525a 7.14%, #834b59 14.29%, #7f4359 21.43%, #783b59 28.57%,
+      #703259 35.71%, #662859 42.86%, #591f59 50%, #4a175a 57.14%,
+      #37135b 64.29%, #1e125d 71.43%, #00135f 78.57%, #001461 85.71%,
+      #001461 92.86%, #001361 100%);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100vw;
-  min-height: 90vh;
+  min-height: 80vh;
 }
 
 .subSection {
-
+  border-radius: 10px;
   align-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -46,8 +67,14 @@
 .aside {
 
   align-items: center;
-  background-color: rgb(185, 237, 136);
+  background-image: radial-gradient(circle at 74.1% 21.28%, #ffdcca 0, #ffddc6 3.85%,
+      #ffdfc3 7.69%, #ffe1c0 11.54%, #ffe3be 15.38%, #ffe5bc 19.23%, #fae7bc 23.08%,
+      #f4e9bc 26.92%, #eeeabd 30.77%, #e7ecbf 34.62%, #e1eec1 38.46%, #daefc5 42.31%,
+      #d4f1c8 46.15%, #cdf2cd 50%, #c7f3d2 53.85%, #c1f4d7 57.69%, #bbf5dd 61.54%,
+      #b6f5e3 65.38%, #b2f5e9 69.23%, #aff5ef 73.08%, #adf5f5 76.92%, #acf5fb 80.77%,
+      #acf4ff 84.62%, #adf4ff 88.46%, #b0f3ff 92.31%, #b3f1ff 96.15%, #b8f0ff 100%);
   border-radius: 5px;
+  box-shadow: 15px -5px 8px #2e2e2e;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -82,11 +109,25 @@
   padding: 20px 50px;
   border: 3px solid #3c67e3;
   border-radius: 10px;
+  box-shadow: 6px -5px 6px #726f6f;
+  text-shadow: 3px -3px 2px #2e2e2e;
 }
 
 .btnStyle:hover {
 
   animation: pulsate 1s ease-in-out;
+
+}
+
+label {
+
+  text-shadow: 4px -4px 3px #726f6f;
+
+
+}
+
+input {
+  box-shadow: 10px -6px 8px #2e2e2e;
 
 }
 

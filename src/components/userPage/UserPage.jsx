@@ -20,7 +20,7 @@ const UserPage = () => {
             const getUsers = async () => {
                 const response = await axios.get("http://51.38.51.187:5050/api/v1/users",
                     config)
-                // console.log(response.data.items);
+                console.log(response);
                 setUsers(response.data.items);
             }
             getUsers();
@@ -56,7 +56,7 @@ const UserPage = () => {
                                     <td data-titulo="Usuario:">{e.email}</td>
                                     <td data-titulo="Nombre:">{e.name}</td>
                                     <td data-titulo="Apellido:">{e.surname}</td>
-                                    <td className='d-flex justify-content-center'><Link type="button" className="btn btn-outline-light btnStyle" to={`/user/${e.id}`}>Ver</Link></td>
+                                    <td className='d-flex justify-content-center'><Link type="button" className="btn btn-outline-light btnStyle" to={`/${e.id}`}>Ver</Link></td>
                                 </tr>
                             ))}
                         </tbody>
@@ -64,7 +64,7 @@ const UserPage = () => {
                 </article>
 
                 <aside className='subSection'>
-                    <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
+                    <div className="aside shadow-lg m-3 p-3 bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
                         <div>
                             {errorMessage}
                         </div>

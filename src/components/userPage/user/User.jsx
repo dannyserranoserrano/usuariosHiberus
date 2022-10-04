@@ -113,7 +113,7 @@ function User() {
                 <h3>Datos de {user.name}</h3>
             </header>
 
-            <section className='section'>
+            <section className='sectionUser'>
                 <div className='subSection'>
                     <article className='aside'>
                         <div className="card text-center">
@@ -155,10 +155,10 @@ function User() {
                 </div>
 
                 <aside className="subSection">
-                    <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: successMessage ? "block" : "none" }}>
+                    <div className="aside shadow-lg m-3 p-3 bg-body rounded border" style={{ display: successMessage ? "block" : "none" }}>
                         {successMessage}
                     </div>
-                    <div className="shadow-lg m-3 p-3 bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
+                    <div className="aside shadow-lg m-3 p-3 bg-body rounded border" style={{ display: errorMessage ? "block" : "none" }}>
                         {errorMessage}
                     </div>
                 </aside>
@@ -177,7 +177,7 @@ function User() {
                         </div>
                     </article>
                 </div>
-            </section>
+            </section >
         </div >
     )
 };

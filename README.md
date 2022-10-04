@@ -24,11 +24,10 @@ He ido cargando los componentes en el componente Home, en lugar de cargar págin
 
 ## Dificultades y soluciones.
 He encontrado dificultad al renderizar en el componente usuario, ya que al cargarse con una Id personalizada, no he encontrado el método, por lo que decidí que fuese el único enrutado existente,
-El LogOut, lo he realizado sin pantalla a mostrar ya que no vi necesario mostrarlo una vez pulsado el botoń. Lo que si cuenta es con confirmación por parte del usuario, y re-direccionamiento a la página principal.
-También me surge un pequeño fallo no resuelto que es la doble confirmación unicamente en el borrado, y que no he encontrado el motivo.
+El LogOut, lo he realizado sin pantalla a mostrar ya que no vi necesario mostrarlo una vez pulsado el botoń. Lo que si cuenta es con confirmación por parte del usuario.
 Me surgió al comienzo del proyecto la dificultad de encontrar como realizar la llamada a la Api integrándole el Token, pero tras varias pruebas con Postman, y  consultando en alguna página por medio Google, conseguí solución fácilmente. Una vez esto no encontré mayor dificultad, ya que las llamadas a Api’s, las utilizo con frecuencia.
 
-Mi dificultad la encontré en los estilos y en como realizar el proyecto para que no fuese excesivamente cargado o molesto, y pudiese mostrar claramente su finalidad. También en el modo de implantar los cambios en la pantalla de modo que solo cargase algunos componentes sueltos en lugar de realizar constantes enrutados completos ya que entiendo que la finalidad de un framework como este es el uso de componentes en una página, y no la apertura de constantes páginas.
+Mi mayor  dificultad la encontré en los estilos y en como realizar el proyecto para que no fuese excesivamente cargado o molesto, y pudiese mostrar claramente su finalidad. También en el modo de implantar los cambios en la pantalla de modo que solo cargase algunos componentes sueltos en lugar de realizar constantes enrutados completos ya que entiendo que la finalidad de un framework como este es el uso de componentes en una página, y no la apertura de constantes páginas.
 
 
 ### Para realizar el arranque, descargar la carpeta y en terminal dentro de la ubicación, ejecutar npm i.
