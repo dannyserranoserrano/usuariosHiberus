@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './home.css'
 import CardHome from './CardHome';
 import LogIn from '../logIn/LogIn'
+import React, { useState } from 'react';
 import SignUp from '../signUp/SignUp'
 import UserPage from '../userPage/UserPage'
+import './home.css'
 
-function Home() {
+export default function Home() {
 
-
+    // Funcion para hacer LogOut
     const handleLogOut = () => {
 
         let option = window.confirm('Estas seguro de querer Salir?')
@@ -18,11 +18,11 @@ function Home() {
                 window.location.reload();
             }, 500)
         }
-    }
+    };
 
 
-    const [visible, setVisible] = useState(0)
-    let token = localStorage.getItem('accessToken')
+    const [visible, setVisible] = useState(0); //Lo usamos para ir mostrando diferentes componentes
+    let token = localStorage.getItem('accessToken'); //Recogemos el token para hacer condicionales 
 
     return (
         <div className='page'>
@@ -58,6 +58,4 @@ function Home() {
             </section>
         </div >
     )
-}
-
-export default Home;
+};

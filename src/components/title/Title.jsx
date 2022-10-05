@@ -5,7 +5,7 @@ export default function Title() {
     return (
         <div>
             <header className='headerTitle'>
-                <p>Prueba practica de Front</p>
+                <p>Prueba Practica de Front</p>
             </header>
         </div>
     )

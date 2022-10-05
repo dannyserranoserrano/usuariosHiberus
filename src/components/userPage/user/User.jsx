@@ -1,10 +1,10 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import '../userPage.css'
 
 
-function User() {
+export default function User() {
 
     const { id } = useParams()
     const [user, setUser] = useState([]);
@@ -13,21 +13,25 @@ function User() {
         name: "",
         surname: ""
     });
+
     const accessToken = localStorage.getItem("accessToken")
     const [successMessage, setSuccessMessage] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
     const navigate = useNavigate();
 
     const config = {
+
         headers: { Authorization: `Bearer ${accessToken}` }
     }
 
     //Cargamos los datos del usuario
     useEffect(() => {
+
         const getUser = async () => {
+
             const response = await axios.get(`http://51.38.51.187:5050/api/v1/users/${id} `,
                 config)
-            console.log(response.data);
+            // console.log(response.data);
             setUser(response.data);
         }
         getUser();
@@ -36,6 +40,7 @@ function User() {
 
     //Funcion para borrar el usuario
     const delUser = async (e) => {
+
         e.preventDefault();
 
         let option = window.confirm("Seguro de borrar al Usuario?")
@@ -52,7 +57,7 @@ function User() {
 
             } catch (error) {
                 setTimeout(() => {
-                    window.location.href = `/user/${id}`
+                    window.location.href = `/${id}`
                 }, 2000)
             }
         };
@@ -86,6 +91,7 @@ function User() {
 
         if (option) {
             try {
+
                 const response = await axios.put(`http://51.38.51.187:5050/api/v1/users/${id}`,
                     { ...upUser },
                     config)
@@ -93,7 +99,7 @@ function User() {
                 setSuccessMessage("Se ha modificado correctamente")
                 console.log(response)
                 setTimeout(() => {
-                    window.location.href = `/user/${id}`
+                    window.location.href = `/${id}`
                 }, 2000)
 
             } catch (error) {
@@ -181,5 +187,3 @@ function User() {
         </div >
     )
 };
-
-export default User

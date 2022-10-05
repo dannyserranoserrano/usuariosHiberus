@@ -1,5 +1,5 @@
 import React from 'react'
-
+//Tarjeta de estado para el home
 export default function CardHome() {
     let user = localStorage.getItem('email')
     return (

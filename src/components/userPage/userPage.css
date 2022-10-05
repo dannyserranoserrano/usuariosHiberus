@@ -1,3 +1,12 @@
+/* Estilos exclusivos de User y UserPage */
+
+
+.card {
+
+    box-shadow: 10px -8px 8px #2e2e2e;
+    text-shadow: 5px -2px 4px #726f6f;
+}
+
 .tabla {
     border-radius: 10px;
     box-shadow: 14px -12px 20px #2e2e2e;
@@ -11,11 +20,6 @@ table td {
     box-shadow: 10px -2px 8px #2e2e2e;
 }
 
-.card {
-
-    box-shadow: 10px -8px 8px #2e2e2e;
-    text-shadow: 5px -2px 4px #726f6f;
-}
 
 .sectionUser {
 
