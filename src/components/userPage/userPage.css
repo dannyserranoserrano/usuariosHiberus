@@ -1,0 +1,71 @@
+/* Estilos exclusivos de User y UserPage */
+
+
+.card {
+
+    box-shadow: 10px -8px 8px #2e2e2e;
+    text-shadow: 5px -2px 4px #726f6f;
+}
+
+.tabla {
+    border-radius: 10px;
+    box-shadow: 14px -12px 20px #2e2e2e;
+}
+
+table th,
+table tr,
+table td {
+
+    border: 1px solid white;
+    box-shadow: 10px -2px 8px #2e2e2e;
+}
+
+
+.sectionUser {
+
+    background-image: radial-gradient(circle at 71.43% 28.57%, #89595a 0,
+            #87525a 7.14%, #834b59 14.29%, #7f4359 21.43%, #783b59 28.57%,
+            #703259 35.71%, #662859 42.86%, #591f59 50%, #4a175a 57.14%,
+            #37135b 64.29%, #1e125d 71.43%, #00135f 78.57%, #001461 85.71%,
+            #001461 92.86%, #001361 100%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100vw;
+    min-height: 70vh;
+}
+
+@media (max-width: 600px) {
+
+    table {
+        width: 100%;
+    }
+
+    table tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #726f6f;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table td,
+    table th {
+        border: none;
+    }
+
+    table td[data-titulo] {
+        display: flex;
+    }
+
+    table td[data-titulo]::before {
+        content: attr(data-titulo);
+        width: 70px;
+    }
+}
